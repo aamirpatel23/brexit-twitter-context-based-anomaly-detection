@@ -13,7 +13,7 @@ The model can be divided into four stages:
 #### 1. Twitter Streaming
 
 Two methods have been implemented to stream tweets. It has been observed **Spark + Tweepy** method when executed in local mode on one machine is significantly slower than **Tweepy** method in the same environment.
-- **Tweepy** - [TwitterStreaming_Tweepy.py](https://github.com/aamirpatel23/brexit-twitter-context-based-anomaly-detection/blob/master/TwitterStreaming_Tweepy.py) streams tweets using twitter streaming api and tweepy and saves the "text" of the tweets in csv format. **Note:** The code might return error 420 after running for 1 min, reason being rate limit imposed by twitter . You should wait for atleast 10-15 min and then re-run the code to start streaming tweets. The tweets will continue to append to the previously saved tweets in the csv file.
+- **Tweepy** - [TwitterStreaming_Tweepy.py](https://github.com/aamirpatel23/brexit-twitter-context-based-anomaly-detection/blob/master/TwitterStreaming_Tweepy.py) streams tweets using twitter streaming api and tweepy and saves the "text" of the tweets in csv format. **Note:** The code might return error 420 after running for 1 min, reason being rate limit imposed by twitter. Wait for atleast 10-15 min and then re-run the code to start streaming tweets. The tweets will continue to append to the previously saved tweets in the csv file.
 
 - **Spark + Tweepy** - [TwitterStreaming_SparkTweepy.py](https://github.com/aamirpatel23/brexit-twitter-context-based-anomaly-detection/blob/master/TwitterStreaming_SparkTweepy.py) waits on localhost:5555 until the next script
 [TwitterStreaming_Spark.py](https://github.com/aamirpatel23/brexit-twitter-context-based-anomaly-detection/blob/master/TwitterStreaming_Spark.py) runs. The tweets are stored in partition files (JSON format) which can then be merged into one file using merge file commands.
@@ -50,7 +50,7 @@ The project has been carried using [Python 3.6.8](https://www.python.org/downloa
     
     - To convert json file to csv, use [JSON_to_CSV.ipynb](https://github.com/aamirpatel23/brexit-twitter-context-based-anomaly-detection/blob/master/JSON_to_CSV.ipynb) notebook.
 
-#### BONUS:  If you want to skip the above Twitter Streaming step, then extract the dataset from [brexit.zip](https://github.com/aamirpatel23/brexit-twitter-context-based-anomaly-detection/blob/master/brexit.zip), continue to next step and update the paths where needed.
+#### BONUS:  To skip the above Twitter Streaming step, extract the dataset from [brexit.zip](https://github.com/aamirpatel23/brexit-twitter-context-based-anomaly-detection/blob/master/brexit.zip), continue to next step and update the paths where needed.
 
 #### 2. Preprocessing, Topic Modeling, and Anomaly Detection
 
